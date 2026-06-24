@@ -1,16 +1,41 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Welcome to my personal portfolio website, built with React and Vite.
 
-Currently, two official plugins are available:
+## About this Portfolio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This portfolio showcases my skills, projects, and design sense in a clean, responsive web experience. It is designed to highlight the work I have completed, demonstrate my front-end development abilities, and provide an easy way for visitors to learn more about me.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Modern React application with Vite for fast development and build performance
+- Responsive layout optimized for desktop and mobile devices
+- Project showcase section for portfolio pieces and case studies
+- Contact information and social links for connection
+- Styled with CSS for a polished visual presentation
 
-## Expanding the Oxlint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- React
+- Vite
+- JavaScript
+- CSS
+
+## How to Run
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Notes
+
+This repository contains the source code for my portfolio website. You can customize the content, add new projects, and update the styling to match your personal brand.

@@ -1,41 +1,31 @@
-# Portfolio Website
+# Ganji Raju Portfolio
 
-Welcome to my personal portfolio website, built with React and Vite.
-
-## About this Portfolio
-
-This portfolio showcases my skills, projects, and design sense in a clean, responsive web experience. It is designed to highlight the work I have completed, demonstrate my front-end development abilities, and provide an easy way for visitors to learn more about me.
+A modern, recruiter-friendly portfolio website built with React, Vite, Tailwind CSS, Framer Motion, and Lucide React.
 
 ## Features
+- Responsive one-page portfolio
+- Modern dark UI with glassmorphism cards
+- Smooth section transitions and lightweight animations
+- Project filtering
+- Resume download button
+- Contact form validation
+- SEO metadata and favicon
 
-- Modern React application with Vite for fast development and build performance
-- Responsive layout optimized for desktop and mobile devices
-- Project showcase section for portfolio pieces and case studies
-- Contact information and social links for connection
-- Styled with CSS for a polished visual presentation
-
-## Technologies Used
-
-- React
-- Vite
-- JavaScript
-- CSS
-
-## How to Run
-
-1. Install dependencies:
+## Setup
+1. Install dependencies
    ```bash
    npm install
    ```
-2. Start the development server:
+2. Start the development server
    ```bash
    npm run dev
    ```
-3. Build for production:
-   ```bash
-   npm run build
-   ```
+3. Open the local URL shown in the terminal.
 
-## Notes
+## Customization
+- Update personal details and project content in [src/data/portfolioData.js](src/data/portfolioData.js)
+- Replace the resume file in [public/Ganji_Raju_Resume.pdf](public/Ganji_Raju_Resume.pdf)
+- Add your own project images in [public/projects](public/projects)
 
-This repository contains the source code for my portfolio website. You can customize the content, add new projects, and update the styling to match your personal brand.
+## Deployment
+Deploy to Vercel by connecting the repository and using the default Vite build settings.

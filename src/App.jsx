@@ -55,7 +55,7 @@ const App = () => {
   }, []);
 
   const handleResume = () => {
-    const resumeUrl = '/Raju_Ganji_Resume.pdf';
+    const resumeUrl = '/Ganji_Raju_Resume.pdf';
     window.open(resumeUrl, '_blank', 'noopener,noreferrer');
   };
 

@@ -1,8 +1,8 @@
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, Download, Eye } from 'lucide-react';
 import ThemeToggle from '../components/ThemeToggle';
 import { navItems } from '../data/portfolioData';
 
-const Navbar = ({ theme, onToggleTheme, activeSection, isMenuOpen, onToggleMenu, onResume }) => {
+const Navbar = ({ theme, onToggleTheme, activeSection, isMenuOpen, onToggleMenu, onViewResume, onDownloadResume }) => {
   const handleNav = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
@@ -30,10 +30,16 @@ const Navbar = ({ theme, onToggleTheme, activeSection, isMenuOpen, onToggleMenu,
 
         <div className="flex items-center gap-2">
           <button
-            onClick={onResume}
+            onClick={onViewResume}
+            className="hidden cursor-pointer items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-400/20 sm:inline-flex"
+          >
+            <Eye size={16} /> View
+          </button>
+          <button
+            onClick={onDownloadResume}
             className="hidden cursor-pointer items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90 sm:inline-flex"
           >
-            <Download size={16} /> Resume
+            <Download size={16} /> Download
           </button>
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           <button
@@ -65,8 +71,14 @@ const Navbar = ({ theme, onToggleTheme, activeSection, isMenuOpen, onToggleMenu,
               </button>
             ))}
             <button
-              onClick={onResume}
-              className="mt-2 inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-2 text-sm font-semibold text-white"
+              onClick={onViewResume}
+              className="mt-2 inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-300"
+            >
+              <Eye size={16} /> View Resume
+            </button>
+            <button
+              onClick={onDownloadResume}
+              className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-2 text-sm font-semibold text-white"
             >
               <Download size={16} /> Download Resume
             </button>

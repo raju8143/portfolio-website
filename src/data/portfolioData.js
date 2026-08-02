@@ -4,6 +4,7 @@ export const navItems = [
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'education', label: 'Education' },
+  { id: 'achievements', label: 'Achievements' },
   { id: 'certifications', label: 'Certifications' },
   { id: 'contact', label: 'Contact' },
 ];
@@ -54,7 +55,6 @@ export const skillGroups = [
       { name: 'Python', note: 'Strong scripting and logic building' },
       { name: 'Django Basics', note: 'Backend fundamentals and CRUD flows' },
       { name: 'Node.js', note: 'Server-side JavaScript solutions' },
-      { name: 'Express.js', note: 'Lightweight API development' },
       { name: 'REST API Integration', note: 'Connecting frontends with real services' },
     ],
   },
@@ -225,30 +225,34 @@ export const education = [
   },
 ];
 
+export const achievements = [
+  {
+    title: 'DataQuezt #2 – Python for Data',
+    description: 'Participated in the Naukri Campus DataQuezt #2 assessment focused on Python fundamentals, data structures, NumPy, Pandas, and data manipulation for analytics and data science.',
+    date: 'Naukri Campus • 2026',
+    url: 'https://www.naukri.com/campus/certificates/participation/v0/6a6f6298fb94fe716f4ae3f9?utm_source=certificate&utm_medium=copy&utm_campaign=6a6f6298fb94fe716f4ae3f9',
+    buttonLabel: 'View Certificate',
+  },
+];
+
 export const certifications = [
   {
-    name: 'Python Certification',
+    name: 'Python for Beginners',
     organization: 'Simplilearn',
-    date: 'Completion date: Available in portfolio data',
-    url: '#',
+    date: 'Completion date: Apr 2025',
+    url: 'https://www.simplilearn.com/learn-python-basics-free-course-skillup',
   },
   {
-    name: 'Great Learning Certification',
-    organization: 'Great Learning',
-    date: 'Completion date: Available in portfolio data',
-    url: '#',
-  },
-  {
-    name: 'Internship Certificate',
+    name: 'Web development',
     organization: 'Eevolution Technology',
-    date: 'Completion date: Available in portfolio data',
-    url: '#',
+    date: 'Completion date: Feb-2024 - May-2024',
+    url: 'https://drive.google.com/file/d/1Ti9YS72NEXw14xQawXz_kR_zik_gfHhM/view?usp=sharing',
   },
   {
-    name: 'BDA Certificate',
+    name: 'Fullstack web development',
     organization: 'Edzeeta',
-    date: 'Completion date: Available in portfolio data',
-    url: '#',
+    date: 'Completion date: Jul 2025 - Oct 2025',
+    url: 'https://drive.google.com/file/d/1mudyMP793T0N-_Y34Aww22HBqnDePEtV/view',
   },
 ];
 

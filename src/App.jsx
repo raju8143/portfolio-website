@@ -11,6 +11,7 @@ import EducationSection from './sections/EducationSection';
 import CertificationsSection from './sections/CertificationsSection';
 import ExperienceSection from './sections/ExperienceSection';
 import ContactSection from './sections/ContactSection';
+import AchievementsSection from './sections/AchievementsSection';
 
 const App = () => {
   const [theme, setTheme] = useState('dark');
@@ -22,41 +23,59 @@ const App = () => {
 
   useEffect(() => {
     const timer = window.setTimeout(() => setLoading(false), 700);
-    const sections = ['home', 'about', 'skills', 'projects', 'education', 'certifications', 'contact'];
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
-      },
-      { threshold: 0.45 },
-    );
+    const sectionIds = ['home', 'about', 'skills', 'projects', 'education', 'certifications', 'contact'];
 
-    sections.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
+    const updateActiveSection = () => {
+      const offset = 140;
+      let currentSection = 'home';
+      let closestDistance = Number.POSITIVE_INFINITY;
 
-    const handleScroll = () => {
+      sectionIds.forEach((id) => {
+        const element = document.getElementById(id);
+        if (!element) return;
+
+        const rect = element.getBoundingClientRect();
+        const elementTop = rect.top + window.scrollY;
+        const distance = Math.abs(elementTop - (window.scrollY + offset));
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          currentSection = id;
+        }
+      });
+
+      setActiveSection(currentSection);
+
       const height = document.documentElement.scrollHeight - window.innerHeight;
       const progress = height > 0 ? (window.scrollY / height) * 100 : 0;
       setScrollProgress(progress);
       setShowTop(window.scrollY > 500);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+    updateActiveSection();
 
     return () => {
       window.clearTimeout(timer);
-      observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
     };
   }, []);
 
-  const handleResume = () => {
+  const handleViewResume = () => {
     const resumeUrl = '/Ganji_Raju_Resume.pdf';
     window.open(resumeUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleDownloadResume = () => {
+    const resumeUrl = '/Ganji_Raju_Resume.pdf';
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Ganji_Raju_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const toggleTheme = () => {
@@ -80,18 +99,19 @@ const App = () => {
         ) : null}
       </AnimatePresence>
 
-      <Navbar theme={theme} onToggleTheme={toggleTheme} activeSection={activeSection} isMenuOpen={isMenuOpen} onToggleMenu={() => setIsMenuOpen((prev) => !prev)} onResume={handleResume} />
+      <Navbar theme={theme} onToggleTheme={toggleTheme} activeSection={activeSection} isMenuOpen={isMenuOpen} onToggleMenu={() => setIsMenuOpen((prev) => !prev)} onViewResume={handleViewResume} onDownloadResume={handleDownloadResume} />
       <main>
-        <HeroSection onResume={handleResume} />
-        <AboutSection onResume={handleResume} />
-        <SkillsSection />
-        <ProjectsSection />
-        <EducationSection />
-        <CertificationsSection />
-        <ExperienceSection />
-        <ContactSection />
+        <HeroSection theme={theme} />
+        <AboutSection theme={theme} />
+        <SkillsSection theme={theme} />
+        <ProjectsSection theme={theme} />
+        <EducationSection theme={theme} />
+        <AchievementsSection theme={theme} />
+        <CertificationsSection theme={theme} />
+        <ExperienceSection theme={theme} />
+        <ContactSection theme={theme} />
       </main>
-      <footer className="border-t border-white/10 px-4 py-8 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
+      <footer className={`border-t px-4 py-8 text-center text-sm sm:px-6 lg:px-8 ${theme === 'dark' ? 'border-white/10 text-slate-500' : 'border-slate-200 text-slate-600'}`}>
         <p>© 2026 Ganji Raju. Built with React.js.</p>
       </footer>
 

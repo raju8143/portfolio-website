@@ -64,15 +64,15 @@ const App = () => {
   }, []);
 
   const handleViewResume = () => {
-    const resumeUrl = '/Ganji_Raju_Resume.pdf';
+    const resumeUrl = '/Raju-Ganji-Python-FullStack-Developer.pdf';
     window.open(resumeUrl, '_blank', 'noopener,noreferrer');
   };
 
   const handleDownloadResume = () => {
-    const resumeUrl = '/Ganji_Raju_Resume.pdf';
+    const resumeUrl = '/Raju-Ganji-Python-FullStack-Developer';
     const link = document.createElement('a');
     link.href = resumeUrl;
-    link.download = 'Ganji_Raju_Resume.pdf';
+    link.download = 'Raju-Ganji-Python-FullStack-Developer';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

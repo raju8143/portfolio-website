@@ -40,6 +40,28 @@ export const skillGroups = [
     ],
   },
   {
+    title: 'Backend Development',
+    icon: 'ServerCog',
+    items: [
+      { name: 'Python', note: 'Advanced scripting with AI libraries' },
+      { name: 'Django & Django REST', note: 'REST APIs, custom middleware & auth flows' },
+      { name: 'InsightFace', note: 'Real-time face recognition with 512-d embeddings' },
+      { name: 'OpenCV', note: 'Camera kiosk mode & image processing' },
+      { name: 'Node.js', note: 'Server-side JavaScript solutions' },
+      { name: 'REST API Integration', note: 'Connecting frontends with secure services' },
+    ],
+  },
+  {
+    title: 'AI & Computer Vision',
+    icon: 'BrainCircuit',
+    items: [
+      { name: 'Face Recognition', note: 'Buffalo_S model & cosine similarity matching' },
+      { name: 'Face Encoding Pipeline', note: '512-d embeddings & confidence thresholding' },
+      { name: 'Liveness & Anti-Spoofing', note: 'Reliable attendance verification' },
+      
+    ],
+  },
+  {
     title: 'Mobile Development',
     icon: 'Smartphone',
     items: [
@@ -49,21 +71,11 @@ export const skillGroups = [
     ],
   },
   {
-    title: 'Backend Development',
-    icon: 'ServerCog',
-    items: [
-      { name: 'Python', note: 'Strong scripting and logic building' },
-      { name: 'Django Basics', note: 'Backend fundamentals and CRUD flows' },
-      { name: 'Node.js', note: 'Server-side JavaScript solutions' },
-      { name: 'REST API Integration', note: 'Connecting frontends with real services' },
-    ],
-  },
-  {
     title: 'Databases',
     icon: 'Database',
     items: [
-      { name: 'MySQL', note: 'Structured data storage and queries' }
-      
+      { name: 'MySQL', note: 'Structured data storage and queries' },
+      { name: 'SQL Optimization', note: 'Efficient query design for attendance logs' }
     ],
   },
   {
@@ -74,23 +86,22 @@ export const skillGroups = [
       { name: 'GitHub', note: 'Project hosting and review workflows' },
       { name: 'VS Code', note: 'Clean and efficient development setup' },
       { name: 'Postman', note: 'API testing and debugging' },
-      { name: 'Vercel', note: 'Fast deployment and preview environments' }
-      
+      { name: 'Vercel', note: 'Fast deployment and preview environments' },
+      { name: 'Figma', note: 'Design to code translation' }
     ],
   },
   {
     title: 'Programming Concepts',
     icon: 'BrainCircuit',
     items: [
-      
       { name: 'React Hooks', note: 'Modern state and lifecycle patterns' },
       { name: 'State Management', note: 'Managing app data confidently' },
       { name: 'Conditional Rendering', note: 'Dynamic UI based on state' },
       { name: 'Event Handling', note: 'Interactive user experiences' },
       { name: 'API Integration', note: 'Data fetching and real-world wiring' },
       { name: 'Error Handling', note: 'Creating reliable user flows' },
+      { name: 'CORS & Middleware', note: 'Custom middleware for secure API access' },
       { name: 'SQL Queries', note: 'Fetching and managing data' }
-     
     ],
   },
 ];
@@ -198,7 +209,28 @@ export const projects = [
     liveUrl: '#',
     image: '/projects/signlanguage.png',
     accent: 'from-pink-500/20 to-rose-500/20',
-  }
+  },
+  {
+    id: 'ai-face-attendance',
+    title: 'AI Face Attendance System',
+    category: 'Python',
+    description: 'An end-to-end AI-powered attendance system that uses real-time face recognition to automate employee check-in/out, live occupancy tracking, and payroll reporting.',
+    features: [
+      'Real-time face recognition with InsightFace Buffalo_S',
+      '512-d face embedding & cosine similarity matching',
+      'Auto check-in/out with work-hours calculation',
+      'Live occupancy dashboard',
+      'Branch & shift management',
+      'Payroll Excel export',
+      'Camera kiosk mode with OpenCV',
+      'Custom CORS middleware & REST APIs',
+    ],
+    tech: ['Python', 'Django', 'React', 'InsightFace', 'OpenCV', 'REST API', 'JavaScript'],
+    githubUrl: 'https://github.com/raju8143/AI-Face-Attendance-System.git',
+    liveUrl: '#',
+    image: '/projects/AI-Face-Detection.png',
+    accent: 'from-blue-500/20 to-cyan-500/20',
+  },
   
 ];
 
